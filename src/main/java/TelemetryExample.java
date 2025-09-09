@@ -9,7 +9,8 @@ public class TelemetryExample {
 
         Random random = new Random();
 
-        Gauge.builder("temperature_celsius", () -> random.nextInt(20, 30))
+        // Generate temperature between 20 and 30
+        Gauge.builder("temperature_celsius", () -> 20 + random.nextInt(10))
                 .description("Temperature in Celsius")
                 .register(registry);
 
